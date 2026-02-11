@@ -32,7 +32,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<b>{{id-fiscal-nombre}}:</b>&nbsp;{{id-fiscal}}
 			{{#es-empresa}}{{#mercantil-ciudad}}
 			<br/>
-			Inscrita en el registro mercantil de {{mercantil-ciudad}}, tomo {{mercantil-tomo}}, libro {{mercantil-libro}}, sección {{mercantil-seccion}}, folio {{mercantil-folio}}, hoja {{mercantil-hoja}}, inscripción {{mercantil-inscripcion}}.
+			{{#__}}Inscrita en el registro mercantil de {{mercantil-ciudad}}, tomo {{mercantil-tomo}}, libro {{mercantil-libro}}, sección {{mercantil-seccion}}, folio {{mercantil-folio}}, hoja {{mercantil-hoja}}, inscripción {{mercantil-inscripcion}}.{{/__}}
 			{{/mercantil-ciudad}}{{/es-empresa}}
 		</li>
 		{{/id-fiscal}}		
@@ -82,8 +82,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	{{#__}}La utilización del Sitio Web le otorga la condición de Usuario, e implica la aceptación completa de todas las cláusulas y condiciones de uso incluidas en las páginas:{{/__}}
 	<ul>		
 		<li><a href="{{ avisolegalURL }}">{{#__}}Aviso Legal{{/__}}</a></li>
-		{{# privacidadURL }}<li><a href="{{ privacidadURL }}">Política de Privacidad</a></li>{{/ privacidadURL }}
-		{{# cookiesURL }}<li><a href="{{ cookiesURL }}">Política de Cookies</a></li>{{/ cookiesURL }}
+		{{# privacidadURL }}<li><a href="{{ privacidadURL }}">{{#__}}Política de Privacidad{{/__}}</a></li>{{/ privacidadURL }}
+		{{# cookiesURL }}<li><a href="{{ cookiesURL }}">{{#__}}Política de Cookies{{/__}}</a></li>{{/ cookiesURL }}
 	</ul>	
 </p>
 
@@ -116,14 +116,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 {{# clause-edad }}
 <h2>{{#__}}Mayoría de edad{{/__}}</h2>
 <p>
-	{{#__}}
-	Debe tener al menos {{edad-ue}} años de edad para usar los servicios ofrecidos por el Titular o la mayoría de edad que se requiera su país para registrarse en el Sitio Web o utilizarlo. Si reside en un país que no pertenezca a la Unión Europea, debe tener al menos {{edad-otros}} años de edad para usar el sitio Web o la mayoría de edad que se requiera su país para registrarse en el sitio Web o utilizarlo. 	
-	{{/__}}
+	{{#__}}Debe tener al menos {{edad-ue}} años de edad para usar los servicios ofrecidos por el Titular o la mayoría de edad que se requiera su país para registrarse en el Sitio Web o utilizarlo. Si reside en un país que no pertenezca a la Unión Europea, debe tener al menos {{edad-otros}} años de edad para usar el sitio Web o la mayoría de edad que se requiera su país para registrarse en el sitio Web o utilizarlo.{{/__}}
 </p>
 <p>	
-	{{#__}}
-	Además de tener la edad mínima requerida para usar el sitio Web en virtud de la ley aplicable, si no tiene la edad suficiente para poder las condiciones en su país, su padre, madre, o tutor deben aceptar las condiciones en su nombre.
-	{{/__}}
+	{{#__}}Además de tener la edad mínima requerida para usar el sitio Web en virtud de la ley aplicable, si no tiene la edad suficiente para poder las condiciones en su país, su padre, madre, o tutor deben aceptar las condiciones en su nombre.{{/__}}
 </p>
 {{/ clause-edad }}
 
@@ -141,7 +137,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 {{#privacidadURL}}
 <h2>{{#__}}Tratamiento de Datos Personales{{/__}}</h2>
 <p>	
-	{{#__}}Puede consultar toda la información relativa al tratamiento de datos personales que recoge el Titular en la página de {{/__}} <a href="{{privacidadURL}}">Política de Privacidad</a>.
+	{{#__}}Puede consultar toda la información relativa al tratamiento de datos personales que recoge el Titular en la página de {{/__}} <a href="{{privacidadURL}}">{{#__}}Política de Privacidad{{/__}}</a>.
 </p>
 {{/privacidadURL}}
 
@@ -170,7 +166,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <h2>{{#__}}Política de cookies{{/__}}</h2>
 {{# cookiesURL }}
 <p>
-	{{#__}}Puede consultar toda la información relativa a la política de recogida y tratamiento de las cookies en la página de {{/__}} <a href="{{ cookiesURL }}">Política de Cookies</a>.
+	{{#__}}Puede consultar toda la información relativa a la política de recogida y tratamiento de las cookies en la página de {{/__}} <a href="{{ cookiesURL }}">{{#__}}Política de Cookies{{/__}}</a>.
 </p>
 {{/ cookiesURL }}
 {{^cookiesURL}}

@@ -404,7 +404,7 @@ class ARGPD_Settings {
 
 		// configure wc-consent-promo default value.
 		if ( ! strlen( $this->settings['wc-consent-promo'] ) ) {
-			$this->settings['wc-consent-promo'] = __( 'Acepto recibir ofertas, noticias y otras recomendaciones sobre productos o servicios', 'argpd' );
+			$this->settings['wc-consent-promo'] = __( 'Acepto recibir ofertas, noticias y otras recomendaciones sobre productos o servicios.', 'argpd' );
 		}
 
 		if ( is_ssl() ) {

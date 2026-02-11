@@ -1013,7 +1013,7 @@ class ARGPD_Ui {
 						</th>
 						<td>
 							<fieldset>
-								<b>Análisis web</b><br/>
+								<b><?php esc_html_e( 'Análisis web', 'argpd' ); ?></b><br/>
 								<label for="thirdparty-ganalytics">
 									<input 	name="thirdparty-ganalytics" 
 											type="checkbox" 
@@ -1025,7 +1025,7 @@ class ARGPD_Ui {
 								</label>
 								<br/>
 								
-								<br/><b>Publicidad</b><br/>
+								<br/><b><?php esc_html_e( 'Publicidad', 'argpd' ); ?></b><br/>
 								<label for="thirdparty-dclick">
 									<input 	name="thirdparty-dclick" 
 											type="checkbox" 
@@ -1058,7 +1058,7 @@ class ARGPD_Ui {
 								</label>							
 								<br/>
 
-								<br/><b>Email Marketing</b><br/>
+								<br/><b><?php esc_html_e( 'Email Marketing', 'argpd' ); ?></b><br/>
 								<label for="thirdparty-activecampaign">
 									<input 	name="thirdparty-activecampaign" 
 											type="checkbox" 
@@ -1131,7 +1131,7 @@ class ARGPD_Ui {
 								</label>							
 								<br/>								
 
-								<br/><b>Redes Sociales</b><br/>
+								<br/><b><?php esc_html_e( 'Redes Sociales', 'argpd' ); ?></b><br/>
 								<label for="thirdparty-social">
 									<input 	name="thirdparty-social" 
 											type="checkbox" 
@@ -1193,7 +1193,7 @@ class ARGPD_Ui {
 									<?php ( $settings->get_setting( 'clause-edad' ) == 1 ) && printf( 'checked' ); ?>
 									>									
 									<?php esc_html_e( 'Requisito mayoría edad. ', 'argpd' ); ?>
-									Ciudadanos europeos: 
+									<?php esc_html_e( 'Ciudadanos europeos:', 'argpd' ); ?>
 									<input 	
 									type="text" 
 									name="edad-ue" 
@@ -1350,7 +1350,7 @@ class ARGPD_Ui {
 												printf( 'selected="selected"' );}
 											?>
 											>
-											Ninguna</option>
+											<?php esc_html_e( 'Ninguna', 'argpd' ); ?></option>
 									<?php
 									foreach ( get_pages() as $page ) {
 										$selected = ( $page->ID == $settings->get_setting( 'avisolegalID' ) ) ? ( 'selected="selected"' ) : '';
@@ -1368,8 +1368,13 @@ class ARGPD_Ui {
 								}
 								if ( ! $match && $settings->get_setting( 'avisolegal-disabled' ) == 0 ) {
 									?>
-								<p class="description avisolegal-description">
-									Escoge la página dónde aparecerá <br/>el Aviso Legal, <a id="crear-pagina-legal" class="js-create-legal-page" style="cursor:pointer">crea una nueva</a> o usa el <br/>shortcode [argpd_aviso-legal/]
+								<p class="description avisolegal-description">									
+									<?php printf(
+											'%s, <a id="crear-pagina-legal" class="js-create-legal-page" style="cursor:pointer">%s</a> %s [argpd_aviso-legal/].',
+											esc_html__( 'Escoge la página dónde aparecerá el Aviso Legal', 'argpd' ),
+											esc_html__( 'crea una nueva', 'argpd' ),
+											esc_html__( 'o usa el shortcode', 'argpd' ),
+									);?>
 								</p>
 								<?php } ?>
 							</td>
@@ -1378,7 +1383,7 @@ class ARGPD_Ui {
 									class="button" 
 									target="_blank"
 									style="background-color: #03A9F4;color: white;border-color: #03A9F4;"
-								>Qué es la LSSI</a>
+								><?php esc_html_e( '¿Qué es la LSSI?', 'argpd' ); ?></a>
 							</td>
 						</tr>
 
@@ -1416,7 +1421,7 @@ class ARGPD_Ui {
 												printf( 'selected="selected"' );}
 											?>
 											>
-											Ninguna</option>
+											<?php esc_html_e( 'Ninguna', 'argpd' ); ?></option>
 									<?php
 									foreach ( get_pages() as $page ) {
 										$selected = ( $page->ID == $settings->get_setting( 'privacidadID' ) ) ? ( 'selected="selected"' ) : '';
@@ -1433,9 +1438,14 @@ class ARGPD_Ui {
 								}
 								if ( ! $match && $settings->get_setting( 'privacidad-disabled' ) == 0 ) {
 									?>
-								<p class="description privacidad-description">
-									Selecciona la página dónde aparecerá <br/>la Política de Privacidad, <a id="crear-pagina-privacidad" class="js-create-legal-page" style="cursor:pointer">crea una nueva</a> o usa el <br/>shortcode [argpd_politica-privacidad/]
-								</p>
+									<p class="description privacidad-description">
+										<?php printf(
+												'%s, <a id="crear-pagina-privacidad" class="js-create-legal-page" style="cursor:pointer">%s</a> %s [argpd_politica-privacidad/].',
+												esc_html__( 'Escoge la página dónde aparecerá la Política de Privacidad', 'argpd' ),
+												esc_html__( 'crea una nueva', 'argpd' ),
+												esc_html__( 'o usa el shortcode', 'argpd' ),
+										);?>
+									</p>
 								<?php } ?>
 
 							</td>
@@ -1444,7 +1454,7 @@ class ARGPD_Ui {
 									class="button" 
 									target="_blank"
 									style="background-color: #03A9F4;color: white;border-color: #03A9F4;"
-								>Aprende a crear la Política de Privacidad</a>
+								><?php esc_html_e( 'Aprende a crear la Política de Privacidad', 'argpd' ); ?></a>
 							</td>
 						</tr>
 
@@ -1483,7 +1493,7 @@ class ARGPD_Ui {
 												printf( 'selected="selected"' );}
 											?>
 											>
-											Ninguna</option>
+											<?php esc_html_e( 'Ninguna', 'argpd' ); ?></option>
 									<?php
 									foreach ( get_pages() as $page ) {
 										$selected = ( $page->ID == $settings->get_setting( 'cookiesID' ) ) ? ( 'selected="selected"' ) : '';
@@ -1501,7 +1511,12 @@ class ARGPD_Ui {
 								if ( ! $match && $settings->get_setting( 'cookies-disabled' ) == 0 ) {
 									?>
 									<p class="description cookies-description">
-										Selecciona la página dónde aparecerá <br/>la Política de Cookies, <a id="crear-pagina-cookies" class="js-create-legal-page" style="cursor:pointer">crea una nueva</a> o usa el <br/>shortcode [argpd_politica-cookies/]
+										<?php printf(
+												'%s, <a id="crear-pagina-cookies" class="js-create-legal-page" style="cursor:pointer">%s</a> %s [argpd_politica-cookies/].',
+												esc_html__( 'Escoge la página dónde aparecerá la Política de Cookies', 'argpd' ),
+												esc_html__( 'crea una nueva', 'argpd' ),
+												esc_html__( 'o usa el shortcode', 'argpd' ),
+										);?>
 									</p>
 								<?php } ?>
 							</td>
@@ -1510,7 +1525,7 @@ class ARGPD_Ui {
 									class="button" 
 									target="_blank"
 									style="background-color: #03A9F4;color: white;border-color: #03A9F4;"
-								>Aprende a cumplir la Ley de Cookies</a>
+								><?php esc_html_e( 'Aprende a cumplir la Ley de Cookies', 'argpd' ); ?></a>
 							</td>
 						</tr>
 						<!-- Personalizar cookies -->
@@ -1548,7 +1563,7 @@ class ARGPD_Ui {
 												printf( 'selected="selected"' );}
 											?>
 											>
-											Ninguna</option>
+											<?php esc_html_e( 'Ninguna', 'argpd' ); ?></option>
 									<?php
 									foreach ( get_pages() as $page ) {
 										$selected = ( $page->ID == $settings->get_setting( 'custom-cookies-page-id' ) ) ? ( 'selected="selected"' ) : '';
@@ -1565,14 +1580,19 @@ class ARGPD_Ui {
 								}
 								if ( ! $match && $settings->get_setting( 'custom-cookies-page-disabled' ) == 0 ) {
 									?>
-									<p class="custom-cookies-page-description">
-										Selecciona la página dónde aparecerá <br/>la Personalización de Cookies o <a id="create-custom-cookies-page" class="js-create-legal-page" style="cursor:pointer">créala</a>.
+									<p class="description custom-cookies-page-description">
+										<?php printf(
+												'%s, <a id="create-custom-cookies-page" class="js-create-legal-page" style="cursor:pointer">%s</a> %s [argpd_preferencias-cookies/].',
+												esc_html__( 'Escoge la página dónde aparecerá la Personalización de Cookies', 'argpd' ),
+												esc_html__( 'crea una nueva', 'argpd' ),
+												esc_html__( 'o usa el shortcode', 'argpd' ),
+										);?>
 									</p>
 								<?php } ?>
 							</td>
 							<td>
 								<p class="description">
-									Página que permite al usuario configurar sus preferencias en relación con las cookies.
+									<?php esc_html_e( 'Página que permite al usuario configurar sus preferencias en relación con las cookies.', 'argpd' ); ?>
 								</p>
 							</td>
 						</tr>			
@@ -1604,10 +1624,10 @@ class ARGPD_Ui {
 										rel="nofollow"
 										>
 										<span style="text-decoration: none" class="dashicons dashicons-editor-help"></span>
-										Indexar o no indexar
+										<?php esc_html_e( 'Indexar o no indexar', 'argpd' ); ?>
 									</a>
 									<p class="description">
-										<?php esc_html_e( 'No recomendado.', 'argpd' ); ?>			
+										<?php esc_html_e( 'No recomendado.', 'argpd' ); ?>
 									</p>
 								</label>
 							</fieldset>
@@ -1672,7 +1692,7 @@ class ARGPD_Ui {
 							</label>
 							<br/>
 							<br/>
-							<b>Pie de página</b><br/>
+							<b><?php esc_html_e( 'Pie de página', 'argpd' ); ?></b><br/>
 
 							<label  for="option-footer">
 								<input 	name="option-footer" 
@@ -1692,7 +1712,7 @@ class ARGPD_Ui {
 							</label>
 							<br/>
 							<br/>
-							<b>WooCommerce</b><br/>
+							<b><?php esc_html_e( 'WooCommerce', 'argpd' ); ?></b><br/>
 
 							<label  for="option-wc-top-layer">
 								<input 	name="option-wc-top-layer" 
@@ -1747,13 +1767,12 @@ class ARGPD_Ui {
 						</th>
 						<td>
 							<p class="argpd-label"><?php esc_html_e( 'Texto para solicitar el consentimiento en la primera capa informativa:', 'argpd' ); ?></p>
-
 								<textarea 
 									name="consentimiento-label" 
 									id="consentimiento-label" 
 									cols="60"
 									rows="3"
-									placeholder="He leído y acepto la política de privacidad."
+									placeholder="<?php esc_html_e( 'He leído y acepto la política de privacidad.', 'argpd' ); ?>"
 									><?php echo esc_html( $settings->get_setting( 'consentimiento-label' ) ); ?></textarea>						
 									<p class="description">
 										<?php esc_html_e( 'Para mostrar el texto por defecto deja en blanco.', 'argpd' ); ?>	
@@ -1774,7 +1793,7 @@ class ARGPD_Ui {
 									id="wc-consent-promo" 
 									cols="60"
 									rows="3"
-									placeholder="Acepto recibir ofertas, noticias y otras recomendaciones sobre productos o servicios."
+									placeholder="<?php esc_html_e( 'Acepto recibir ofertas, noticias y otras recomendaciones sobre productos o servicios.', 'argpd' ); ?>"
 									><?php echo esc_html( $settings->get_setting( 'wc-consent-promo' ) ); ?></textarea>						
 									<p class="description">
 										<?php esc_html_e( 'Para mostrar el texto por defecto deja en blanco.', 'argpd' ); ?>	
@@ -1856,7 +1875,7 @@ class ARGPD_Ui {
 					<a 	href="https://superadmin.es/blog/privacidad/crear-banner-de-cookies-en-wordpress" 
 						target="_blank"
 						>
-						Aprende más aquí.
+						<?php esc_html_e( 'Aprende más aquí.', 'argpd' ); ?>
 					</a>
 				</p>
 				<div>					
@@ -1907,7 +1926,7 @@ class ARGPD_Ui {
 											id="cookies-linklabel" 
 											size="25"
 											value="<?php echo esc_attr( $settings->get_setting( 'cookies-linklabel' ) ); ?>"
-											placeholder="Configurar y más información"
+											placeholder="<?php esc_html_e( 'Configurar y más información', 'argpd' ); ?>"
 											>
 													
 									<p class="argpd-label pt20"><?php esc_html_e( 'Texto para el botón Aceptar:', 'argpd' ); ?></p>
@@ -1949,7 +1968,7 @@ class ARGPD_Ui {
 													printf( 'selected="selected"' );}
 												?>
 												>
-												Ninguna</option>											
+												<?php esc_html_e( 'Ninguna', 'argpd' ); ?></option>											
 											<?php
 											foreach ( get_pages() as $page ) {
 												$permalink = get_permalink( $page->ID );
@@ -2063,7 +2082,7 @@ class ARGPD_Ui {
 								<p class="api-message"></p>
 								<?php if ( $settings->get_setting( 'apikey' ) == "" ) : ?>
 								<p class="description">
-									Para activar el detector de cookies obtén una clave de API. Para más detalles, consulta <a href="<?php echo esc_attr( admin_url( 'admin.php?page=argpd-addons' ) ); ?>">aquí</a>.
+									<?php esc_html_e( 'Para activar el detector de cookies obtén una clave de API. Para más detalles, consulta', 'argpd' ); ?> <a href="<?php echo esc_attr( admin_url( 'admin.php?page=argpd-addons' ) ); ?>"><?php esc_html_e( 'Clica aquí para conseguir tu clave.', 'argpd' ); ?></a>.
 								</p>
 								<?php endif ?>
 							</td>
@@ -2302,8 +2321,8 @@ class ARGPD_Ui {
 										<label for="option-apikey"><?php esc_html_e( 'Clave de la API', 'argpd' ); ?></label>
 									</th>
 									<td>
-										<div>
-											Consigue tu Clave API. Podrás escanear tu sitio y obtener información detallada de las cookies instaladas, Local Storage, pixels y otras tecnologías de rastreo con sólo hacer click en un botón y, la versión plus recoger consentimientos de tus visitantes. Para más detalles, <a href="https://superadmin.es/adapta-rgpd/subscribete/"> clica aquí para conseguir tu clave</a>.
+										<div>											
+											<?php esc_html_e( 'Consigue tu Clave API. Podrás escanear tu sitio y obtener información detallada de las cookies instaladas, Local Storage, pixels y otras tecnologías de rastreo con sólo hacer click en un botón y, la versión plus recoger consentimientos de tus visitantes.', 'argpd' ); ?> <a href="https://superadmin.es/adapta-rgpd/subscribete/"><?php esc_html_e( 'Clica aquí para conseguir tu clave.', 'argpd' ); ?></a>
 										</div>
 										<div class="pt20">
 										<input 	type="text" 
@@ -2374,11 +2393,11 @@ class ARGPD_Ui {
 										
 										<a href="https://superadmin.es/adapta-rgpd/documentacion-del-consentimiento/" target="_blank">
 										<span style="text-decoration: none" class="dashicons dashicons-editor-help"></span>
-										<?php esc_html_e('Documentación del consentimiento', 'argpd'); ?>
+										<?php esc_html_e('Documentación del consentimiento', 'argpd'); ?></a>
 
 										<?php if ( $disabled ) : ?>
 										<p class="description">
-											Para activar el gestor de consentimientos obtén una clave de API. Para más detalles, consulta <a href="<?php echo esc_attr( admin_url( 'admin.php?page=argpd-addons' ) ); ?>">aquí</a>.
+											<?php esc_html_e( 'Para activar el gestor de consentimientos obtén una clave de API.', 'argpd' ); ?>&nbsp;<a href="<?php echo esc_attr( admin_url( 'admin.php?page=argpd-addons' ) ); ?>"><?php esc_html_e( 'Clica aquí para conseguir tu clave.', 'argpd' ); ?></a>
 										</p>
 										<?php endif ?>
 									</td>
@@ -2392,7 +2411,7 @@ class ARGPD_Ui {
 						</table>
 					</div>
 					<?php if ( !$disabled && $settings->get_setting( 'option-store-consents' ) == 1 ) : ?>
-						<br/><h2>Registro de consentimientos <small>(<span id="js-current">0</span> de <span id="js-quota">0</span> en los últimos 30 días)</small></h2>
+						<br/><h2><?php esc_html_e( 'Registro de consentimientos', 'argpd'); ?><small>&nbsp;(<span id="js-current">0</span> de <span id="js-quota">0</span> <?php esc_html_e( 'en los últimos 30 días', 'argpd'); ?>)</small></h2>
 						<p class="api-message"></p>
 						<div>
 							<table class="form-table">
@@ -2480,7 +2499,7 @@ class ARGPD_Ui {
 		<hr/>
 		<p style="font-size: 1.1em; text-align: center">
 			★ <a title="superadmin.es - Hosting Premium WordPress Administrado" href="https://superadmin.es" target="blank">Superadmin.es</a> ★ 
-			<br/>Hosting Premium WordPress Administrado
+			<br/><?php esc_html_e( 'Hosting Premium WordPress Administrado', 'argpd' ); ?>
 		</p
 	<?php }
 	/**
@@ -2518,10 +2537,10 @@ class ARGPD_Ui {
 		<?php } ?>
 		
 		<div class="wrap">		
-			<h1>Cumple con la RGPD</h1>
+			<h1><?php esc_html_e( 'Cumple con la RGPD', 'argpd' ); ?></h1>
 			
 			<p style="font-size: 1.1em">
-				<b>¡Ayuda a mejorar el plugin!</b> Danos tu valoración de ★★★★★ <span><b><a href="https://wordpress.org/support/plugin/adapta-rgpd/reviews?rate=5#new-post">aquí</a>.</b></span>&nbsp;
+				<?php echo __( '<b>¡Ayuda a mejorar el plugin!</b> Danos tu valoración de ★★★★★ <span><b><a href="https://wordpress.org/support/plugin/adapta-rgpd/reviews?rate=5#new-post">aquí</a>.</b></span>', 'argpd' ); ?>&nbsp;
 			</p
 
 			<?php
@@ -2540,7 +2559,7 @@ class ARGPD_Ui {
 										name="submit" 
 										id="submit" 
 										class="button button-primary" 
-										value="Aceptar">
+										value="<?php esc_html_e( 'Aceptar', 'argpd' ); ?>">
 							</p>
 						</form>
 					</div>
